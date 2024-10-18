@@ -7,7 +7,7 @@ Streamlit app: [Youtube AI Sentiment Analysis](https://youtube-ai-sentimentanaly
 
 ---
 
-Victor B. S. Reis - Sep, 2024
+Victor Barros e S. dos Reis - Sep, 2024
 
 ## The Problem
 - Small business owners, startups, and marketing teams are eager to understand how their products or services are being received in the market
