@@ -1,4 +1,4 @@
-# AI-Powered YouTube Sentiment Scanner <a class="anchor" id="top-bullet"></a>
+# AI-Powered YouTube Sentiment Analysis <a class="anchor" id="top-bullet"></a>
 
 <img src="images/app1.png" alt="app1" />
 <img src="images/app2.png" alt="app2" />
