@@ -37,6 +37,7 @@ This project aims to help users discover and analyze customer sentiment from You
 
 - **Classify Sentiment (ChatGPT/LLM Sentiment Analysis):**
     - Comments from each video are passed to the LLM, which classifies the overall sentiment of each one as Positive, Neutral, or Negative.
+    - A brief summary is also generated along with each sentiment.
     - This is accomplished by using the OpenAI library to communicate with the LLM, with a customizable prompt to reflect the video’s context.
     - Results are saved into a Pandas DataFrame for structured analysis.
     
@@ -45,9 +46,9 @@ This project aims to help users discover and analyze customer sentiment from You
     - Python’s wordcloud library is used to create these visualizations, offering a quick overview of the most discussed terms.
     
 - **Final Summary and Insights (Sentiment & Summary Generation):**
-    - For each video, a brief summary is generated based on the most frequent sentiments and key opinions.
+    - After receiving the sentiments and summaries from all the videos, a single summary text is generated based on the most frequent sentiments and key opinions.
     - The LLM produces a concise description highlighting significant trends (e.g., “Most users love the product’s design but complain about its price”).
-    - The overall sentiment rating is aggregated and visualized for user interpretation.
+    - The overall sentiment and key points from comments are provided along with a wordcloud with the most frequent words.
 
 
 ## Table of Contents:
