@@ -428,8 +428,6 @@ if __name__ == '__main__':
         st.write('This is a solution aimed at identifying the most predominant sentiment from the comments of Youtube videos that are returned as search results for a given query expression. Once you fill the subject to be searched and the amount of videos to be considered from the search results (Youtube API will search for the most relevant ones), just click on "Search" in order to obtain a custom AI-generated review and summary from all the relevant comments, as well as a wordcloud cointaing the most recurring words within them.')
 
         openai_key = st.text_input('OpenAI Key')
-        st.markdown(":bulb: LLM used: gpt-3.5-turbo")
-
 
         st.header( 'Input form' )
         search_query = st.text_input('Please input expression to be searched in Youtube', "Ray-Ban Meta Smart Glasses review")
@@ -499,6 +497,10 @@ if __name__ == '__main__':
 
             st.write('Displaying videos analysed:')
             st.dataframe(df_videos[['video_title', 'video_url', 'sentiment', 'summary']].dropna(subset=['sentiment']))
+
+
+        st.markdown("*Made by: Victor Reis* :coffee:")
+        st.markdown("LLM used: gpt-3.5-turbo :bulb: ")
 
     except Exception as err:
         st.write( 'Erro: ' + str(err) )
