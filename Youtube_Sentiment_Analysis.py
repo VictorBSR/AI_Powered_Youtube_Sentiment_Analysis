@@ -24,9 +24,9 @@ pd.set_option('display.float_format', lambda x: '%.2f' % x)
 st.set_page_config(layout="wide")
 
 # import keys
-load_dotenv()
-api_key = os.getenv("API_KEY")
-openai_key = os.getenv("OPENAI_API_KEY")
+#load_dotenv()
+#api_key = os.getenv("API_KEY")
+#openai_key = os.getenv("OPENAI_API_KEY")
 
 # function to load API key and start Youtube API
 @st.cache_resource
@@ -419,15 +419,17 @@ def generate_final_summary(search_query, sentiment_list, summary_list, api_key):
 # code for testing
 if __name__ == '__main__':
     try:
-        youtube = load_api(api_key)
-
         button_disabled = True
         button_2_disabled = True
         # Create a placeholder for updates
         st.title('Youtube Comments Sentiment Analysis')
         st.write('This is a solution aimed at identifying the most predominant sentiment from the comments of Youtube videos that are returned as search results for a given query expression. Once you fill the subject to be searched and the amount of videos to be considered from the search results (Youtube API will search for the most relevant ones), just click on "Search" in order to obtain a custom AI-generated review and summary from all the relevant comments, as well as a wordcloud cointaing the most recurring words within them.')
 
-        #openai_key = st.text_input('OpenAI Key')
+        openai_key = st.text_input('OpenAI Key')
+        api_key = st.text_input('Youtube API Key')
+
+        st.markdown("*LLM used: gpt-3.5-turbo* :bulb: ")
+        st.markdown("*Made by: Victor B. S. Reis* :coffee:")
 
         st.header( 'Input form' )
         search_query = st.text_input('Please input expression to be searched in Youtube', "Ray-Ban Meta Smart Glasses review")
@@ -437,10 +439,15 @@ if __name__ == '__main__':
         except ValueError:
             raise Exception(' invalid amount of video results was inputted.')
         
-        if len(search_query) > 3 and max_results >= 5 and len(openai_key) > 10:
+        if len(search_query) > 3 and max_results >= 5:
             button_disabled = False
 
         if st.button("Search", disabled=button_disabled):
+            try:
+                youtube = load_api(api_key)
+            except:
+                st.write("Invalid API keys, please check if they're valid and re-run.")
+
             st.header( 'Results' )
             with st.empty():
                 button_disabled = True
@@ -498,9 +505,6 @@ if __name__ == '__main__':
             st.write('Displaying videos analysed:')
             st.dataframe(df_videos[['video_title', 'video_url', 'sentiment', 'summary']].dropna(subset=['sentiment']))
 
-
-        st.markdown("*Made by: Victor Reis* :coffee:")
-        st.markdown("LLM used: gpt-3.5-turbo :bulb: ")
 
     except Exception as err:
         st.write( 'Erro: ' + str(err) )
