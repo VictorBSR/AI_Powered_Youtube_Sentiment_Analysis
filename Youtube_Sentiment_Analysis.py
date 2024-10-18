@@ -26,17 +26,17 @@ st.set_page_config(layout="wide")
 # import keys
 load_dotenv()
 api_key = os.getenv("API_KEY")
-#openai_key = os.getenv("OPENAI_API_KEY")
+openai_key = os.getenv("OPENAI_API_KEY")
 
 # function to load API key and start Youtube API
-@st.cache( allow_output_mutation=True )
+@st.cache_resource
 def load_api(api_key):
     # Set up the API
     youtube = build('youtube', 'v3', developerKey=api_key)
     return youtube
 
 # function to search for videos based on search query
-@st.cache( allow_output_mutation=True )
+@st.cache_resource
 def search_videos(search_query, max_results, api_key):
     try:
         if max_results > 50: # Number of videos to retrieve
@@ -427,7 +427,7 @@ if __name__ == '__main__':
         st.title('Youtube Comments Sentiment Analysis')
         st.write('This is a solution aimed at identifying the most predominant sentiment from the comments of Youtube videos that are returned as search results for a given query expression. Once you fill the subject to be searched and the amount of videos to be considered from the search results (Youtube API will search for the most relevant ones), just click on "Search" in order to obtain a custom AI-generated review and summary from all the relevant comments, as well as a wordcloud cointaing the most recurring words within them.')
 
-        openai_key = st.text_input('OpenAI Key')
+        #openai_key = st.text_input('OpenAI Key')
 
         st.header( 'Input form' )
         search_query = st.text_input('Please input expression to be searched in Youtube', "Ray-Ban Meta Smart Glasses review")
