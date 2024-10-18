@@ -1,5 +1,8 @@
 # AI-Powered YouTube Sentiment Scanner <a class="anchor" id="top-bullet"></a>
 
+<img src="images/app1.png" alt="app1" />
+<img src="images/app2.png" alt="app2" />
+
 Victor B. S. Reis
 
 Sep, 2024
@@ -1121,7 +1124,7 @@ plt.imshow(wordcloud)
 plt.axis("off");
 ```
 
-<img src="wordcloud.png" alt="wordcloud" />
+<img src="images/wordcloud.png" alt="wordcloud" />
 
 # Classifying Sentiment<a class="anchor" id="fourth-bullet"></a>
 
@@ -1545,7 +1548,7 @@ for index, row in df.sample(n=10).iterrows():
     Was that a giant Rivers of Blood!?
     I&#39;ve never played elden ring. What are some tips? Starting tonight
     I&#39;ll be coming back to watch this as soon as I finish up the first area.  I am having an absolute blast with this DLC so far and I am loving the UI improvements.  Much easier on my eyes and finding new items without searching is great.  Especially when a dagger turns out to be a talisman and not a weapon lol.
-    O what a fucking surprise just another fanboy review.
+    O what a surprise just another fanboy review.
     i just got the Hammer by killing this enemy <a href="https://www.youtube.com/watch?v=JCysFRlTN20&amp;t=300">5:00</a> it&#39;s scales with Str, Dex and Faith
     Matty is the shadow to my erdtree 😂
     I got that hammer in my first 5 min. It was the first new weapon I got.
@@ -1561,6 +1564,11 @@ The Streamlit app was deployed using Streamlit Community Cloud.
 - Some improvements that could be made include letting the user choose between other models available, adding an option to add or remove videos to the list before they are analysed, and tuning some parameters from the LLM in order to make it more or less creative with the answers.
 - A smart language detector could also be implemented, so all videos from the same language would be redirected to different pre-processing pipelines.
 
+Screenshots of the working solution in the Streamlit app:
+<img src="images/app1.png" alt="app1" />
+<img src="images/app2.png" alt="app2" />
+<img src="images/app3.png" alt="app3" />
+In the current version the keys should be provided by the user.
 ---
 
 [Back to top](#top-bullet)
