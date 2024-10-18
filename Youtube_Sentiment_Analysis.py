@@ -29,12 +29,14 @@ api_key = os.getenv("API_KEY")
 #openai_key = os.getenv("OPENAI_API_KEY")
 
 # function to load API key and start Youtube API
+@st.cache( allow_output_mutation=True )
 def load_api(api_key):
     # Set up the API
     youtube = build('youtube', 'v3', developerKey=api_key)
     return youtube
 
 # function to search for videos based on search query
+@st.cache( allow_output_mutation=True )
 def search_videos(search_query, max_results, api_key):
     try:
         if max_results > 50: # Number of videos to retrieve
