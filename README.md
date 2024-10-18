@@ -2,10 +2,8 @@
 
 <img src="images/app1.png" alt="app1" />
 <img src="images/app2.png" alt="app2" />
-
-Victor B. S. Reis
-
-Sep, 2024
+---
+Victor B. S. Reis - Sep, 2024
 
 ## The Problem
 - Small business owners, startups, and marketing teams are eager to understand how their products or services are being received in the market
