@@ -80,7 +80,6 @@ pyparsing==3.1.4
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
 pytz==2024.1
-pywin32==306
 pyzmq==26.2.0
 referencing==0.35.1
 regex==2024.9.11
