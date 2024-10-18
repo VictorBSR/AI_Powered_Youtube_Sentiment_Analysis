@@ -3,7 +3,8 @@
 <img src="images/app1.png" alt="app1" />
 <img src="images/app2.png" alt="app2" />
 
-Live version: [Youtube AI Sentiment Analysis](https://youtube-ai-sentimentanalysis.streamlit.app/)
+Streamlit app: [Youtube AI Sentiment Analysis](https://youtube-ai-sentimentanalysis.streamlit.app/)
+
 ---
 
 Victor B. S. Reis - Sep, 2024
